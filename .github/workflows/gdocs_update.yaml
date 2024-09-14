@@ -2,7 +2,7 @@ name: Get Google Drive Data And Transform
 
 on:
   schedule:
-    - cron: '53 * * * *'
+    - cron: '59 * * * *'
 permissions:
   contents: write
 
@@ -11,7 +11,7 @@ jobs:
     name: Get Google Drive Data And Transform
     runs-on: ubuntu-latest
     env:
-      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       GDRIVE_OPP_MAP_SECRET: ${{ secrets.GDRIVE_OPP_MAP_SECRET }}
     steps:
       - uses: actions/checkout@v2
