@@ -27,9 +27,9 @@ jobs:
     - name: Install libcurl and libssl on Linux
       run: 'sudo apt-get -y install libcurl4-openssl-dev'
       shell: bash
+      
     - name: Install CRAN packages
       run: Rscript -e 'install.packages(c("tidyr", "dplyr", "googledrive", "googlesheets4"))'
     - name: Run GoogleDrive R script
-      run: |
-        source('gdocs data transform script.R')
-      shell: Rscript {0}
+      run: Rscript "gdocs data transform script.R"
+
