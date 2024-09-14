@@ -1,8 +1,9 @@
-library(tidyverse)
+library(dplyr)
+library(tidyr)
 library(googledrive)
 library(googlesheets4)
 
-googledrive::drive_auth(email = "nikaskuzin@gmail.com")
+googledrive::drive_auth(path = Sys.getenv('GDRIVE_OPP_MAP_SECRET'))
 gs4_auth(token = drive_token())
 
 oblasts <- c("Вінницька", 'Волинська', 'Дніпропетровська', 'Донецька', 
@@ -38,8 +39,6 @@ df <- df |>
 # business 
 
 df2 <- read_sheet("1OkjAD1J5YhUUl28dLtZ3_9_AsYgiFdx3wgswbFYZTiY")
-
-names(df2)
 
 df2 <- df2 |>
   mutate(Географія2 = Географія,
