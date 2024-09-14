@@ -12,7 +12,7 @@ jobs:
     name: Get Google Drive Data And Transform
     runs-on: ubuntu-latest
     env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
       GDRIVE_OPP_MAP_SECRET: ${{ secrets.GDRIVE_OPP_MAP_SECRET }}
     steps:
       - uses: actions/checkout@v2
