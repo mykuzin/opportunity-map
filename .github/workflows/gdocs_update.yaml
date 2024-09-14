@@ -1,8 +1,9 @@
 name: Get Google Drive Data And Transform
 
 on:
+  workflow_dispatch:
   schedule:
-    - cron: '59 * * * *'
+    - cron: '02 * * * *'
 permissions:
   contents: write
 
